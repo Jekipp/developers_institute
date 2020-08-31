@@ -1,0 +1,27 @@
+{% extends 'trip_app/base.html' %}
+{% load subtract %}
+{% block content %}
+    <h1>All Trips</h1>
+    <p>ID: {{traveler_id}}</p>        
+    <p>Name: {{traveler.name}}</p> 
+    <form method="POST">
+    {{form}}
+    {%csrf_token%}
+ 
+
+    <button  type="submit"  class="btn btn-success">Search</button>
+    <button name='request_trip' type="submit" value='True' class="btn btn-success">Request Trip</button>
+
+    </form>
+
+    <div class="list-group">
+        {% for trip in trips %}
+        {{trip}}
+        <a href="#" class="list-group-item list-group-item-action">
+            Driver: {{trip.driver.name}} From: {{trip.start}} To: {{trip.end}} with {{trip.passenger_seats|subtract:trip.passengers.all.count}} seats available
+        <span><a href="{% url 'join' trip.id traveler_id %}" class='btn btn-success'>Join</a></span>
+        </a>
+        {% endfor %}
+    </div>
+    
+{% endblock content %}

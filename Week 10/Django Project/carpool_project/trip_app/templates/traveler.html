@@ -1,0 +1,12 @@
+{% extends 'trip_app/base.html' %}
+{% block content %}
+    <h1>Welcome Travelers</h1>
+    <form method="POST">
+   {{form}}
+   {%csrf_token%}
+    <button name='traveler_type' type="submit" value='passenger' class="btn btn-success">Passenger</button>
+    <button name='traveler_type' type="submit" value='driver' class="btn btn-success">Driver</button>
+
+
+    </form>
+{% endblock content %}

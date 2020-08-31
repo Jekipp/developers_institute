@@ -1,0 +1,25 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+{% endblock css %}
+
+{% block content %}
+<h1>Register for a Subject</h1>
+
+<form action="" method="POST">
+    <p>
+        <label for="">Full Name</label>
+        <input type="text" name="fullname">
+    </p>
+    <p>
+        <label for="">Subject</label>
+        <input type="text" name="subject">
+    </p>
+    <button>Register</button>
+    {% csrf_token %}
+</form>
+
+
+{% endblock content %}
+    

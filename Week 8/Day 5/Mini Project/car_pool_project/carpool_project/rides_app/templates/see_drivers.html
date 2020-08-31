@@ -1,0 +1,14 @@
+{% extends 'rides_app/base.html' %}
+{% block content %}
+    <h1>Welcome to Drivers</h1>
+    <ul>
+    {% for driver in drivers %}
+    {% if driver.driver %}
+    
+    <li>{{driver.traveler_name}} is a driver with {{driver.num_seats}} seats</li>
+
+    {% endif %}
+    {% endfor %}
+
+    </ul>
+{% endblock content %}

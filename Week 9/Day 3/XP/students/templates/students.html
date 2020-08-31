@@ -1,0 +1,31 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<h1>Student List</h1>
+
+{% if students %}
+    <h2>Students</h2>
+    
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <ul>
+        {% for student in students %}
+            <a href="{% url 'student' student.id %}"><li>{{student.first_name}}, {{student.last_name}}</li></a>
+            <a href="{% url 'clearlocker' student.id %}" class="btn btn-danger">clearlocker</a>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+{% endblock content %}
+    

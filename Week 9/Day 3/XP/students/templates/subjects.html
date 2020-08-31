@@ -1,0 +1,9 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>{{extra_data}}</h1>
+{% for sub in subject_list %}
+    <p><a href="{% url 'subject' sub.id %}">{{sub.name}}</a></p>
+{% endfor %}
+{% endblock content %}

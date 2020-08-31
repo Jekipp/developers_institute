@@ -1,0 +1,10 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Welcome to Index</h1>
+    <img src="{% static 'images/giraffe.png' %}" height='200px' width="200px" alt="">
+
+    <h1>You passed in the number: {{num}}</h1>
+    <button class="btn btn-success">Click Me</button>
+{% endblock content %}

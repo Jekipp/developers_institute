@@ -1,0 +1,14 @@
+{% extends 'rides_app/base.html' %}
+{% block content %}
+    <h1>Welcome to Rides</h1>
+    <ul>
+    {% for trip in trips %}
+    <li>driver: {{trip.driver.traveler_name}}, {{rider.ride_start}}, {{rider.ride_end}}</li>
+    {% for passenger in trip.passengers.all %}
+    <li>passenger: {{passenger.traveler_name}}</li>
+    {% endfor%}
+    <a href="{% url 'join_trip' trip.id traveler_id%}">Join Trip</a>
+    {% endfor %}
+
+    </ul>
+{% endblock content %}

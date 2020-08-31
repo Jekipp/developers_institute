@@ -1,0 +1,24 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<h1>Student</h1>
+<p>ID: {{student.id}}</p>        
+<p>First Name: {{student.first_name}}</p>        
+<p>Last Name: {{student.last_name}}</p>       
+<p>locker: {{student.locker.number}} - CODE: {{student.locker.pin}}</p>     
+
+{% for car in student.car_set.all %}
+    <p>Car {{car.make}}, {{car.color}}</p>
+{% endfor %}
+
+{% for subject in student.subject_set.all %}
+    <p>{{subject.name}}, {{subject.teacher_name}}</p>
+{% endfor %}
+
+
+<a href="{% url 'students' %}" class="btn btn-secondary">Back to Students</a>
+          
+{% endblock content %}
+    

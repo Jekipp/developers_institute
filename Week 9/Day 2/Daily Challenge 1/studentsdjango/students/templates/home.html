@@ -1,0 +1,23 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+<!-- <link rel="stylesheet" href="css/custom.css"> -->
+{% endblock css %}
+
+{% block content %}
+<h1>Welcome {{name}} </h1>
+
+{% if fruits %}
+    <h2>Fruits</h2>
+    <ul>
+        {% for fruit in fruits %}
+            <li>{{fruit}}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+<a href="{% url 'blah' %}" class="btn btn-primary">Go To Index</a>
+{% endblock content %}
+    

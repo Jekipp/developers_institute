@@ -1,0 +1,17 @@
+{% extends 'trip_app/base.html' %}
+{% block content %}
+
+<h1>Single Trip</h1>
+<p>ID: {{trip.id}}</p>        
+<p>driver: {{trip.driver.name}}</p> 
+<p>passengers: </p>       
+{% for passenger in trip.passengers.all %}
+    <ul>
+        <li>{{passenger.name}}</li>
+    </ul>
+       
+{% endfor %}
+
+<a href="{% url 'all_trips' traveler_id %}" class="btn btn-secondary">All Trips</a>
+ 
+{% endblock content %}

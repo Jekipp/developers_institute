@@ -1,0 +1,17 @@
+{% extends 'rides_app/base.html' %}
+{% block content %}
+    <h1>Find Ride</h1>
+    <ul>
+    {% for passenger in passengers %}
+    {% for driver in drivers %}
+    {% if passenger.ride_end == driver.ride_end %}
+    
+    <li>{{driver.traveler_name}} is going to {{driver.ride_end}} and {{passenger.traveler_name}} is going to the same place</li>
+
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+
+    </ul>
+{% endblock content %}

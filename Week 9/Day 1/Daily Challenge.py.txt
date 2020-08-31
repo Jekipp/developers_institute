@@ -1,0 +1,5 @@
+Subjects.objects.create(name=f.language)
+
+sub1 = Subjects.objects.get(id = 16)
+p1.subject_set
+

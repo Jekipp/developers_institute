@@ -1,0 +1,39 @@
+{% extends 'trip_app/base.html' %}
+{% load subtract %}
+{% block content %}
+    <h1>Pending Trips</h1>
+
+    {% for trip_request in pending %}
+    <ul>
+        <li>{{trip_request}}</li>
+    </ul>
+       
+
+    
+    {% endfor %}
+
+
+
+    <div class="list-group">
+        {% for trip_request in pending %}
+        {{trip_request}}
+
+        <a href="#" class="list-group-item list-group-item-action">
+            
+            Request From: {{trip_request.requester}} waitlist: {% for passenger in trip_request.waitlist.all %}{{passenger.name}}, {% endfor %}{{waitlisted}} is going from {{trip_request.start}} to {{trip_request.end}}
+            
+            <a href="{% url 'make_request' trip_request.id traveler_id %}" name='traveler_type' type="submit" value='driver' class="btn btn-success">Make Trip</button></a>
+            <a href="{% url 'waitlist' trip_request.id traveler_id %}" name='traveler_type' type="submit" value='passenger' class="btn btn-success">Waitlist</button></a>
+
+        {% endfor %}
+    </div>
+    <a href="{% url 'all_trips' traveler_id %}" class="btn btn-secondary">All Trips</a>
+
+{% endblock content %}
+
+{% comment %}
+    <button name='traveler_type' type="submit" value='driver' class="btn btn-success">Driver</button>
+    <span><a href="" class='btn btn-success'>Make Trip</a></span>
+
+<span><a href="{% url 'make_request' trip.id traveler_id %}" class='btn btn-success'>Make Trip</a></span>
+{% endcomment %}

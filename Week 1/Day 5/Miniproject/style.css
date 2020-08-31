@@ -1,0 +1,40 @@
+.nav1{
+  height : 100px;
+  border: 3px solid red;
+  display:flex;
+  align-items: center;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+section {
+  height : 200px;
+  border: 3px solid red;
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+}
+
+.div {
+  width: 33%;
+}
+
+.div1 {
+  background-color: blue;
+  order: 0
+}
+
+.div2 {
+  background-color: red;
+}
+
+.div3 {
+  background-color: gray;
+  order: 1
+}

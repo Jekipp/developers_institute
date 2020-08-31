@@ -1,0 +1,10 @@
+{% extends 'rides_app/base.html' %}
+{% block content %}
+    <h1>Welcome Travelers</h1>
+    <form method="POST">
+   {{form}}
+   {{form2}}
+   {%csrf_token%}
+    <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+{% endblock content %}

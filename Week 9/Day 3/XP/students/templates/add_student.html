@@ -1,0 +1,25 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<form action="" method="POST">
+    <table>
+        {{form}}
+    </table>
+
+    <input type="submit">
+    {% csrf_token %}
+</form>
+{% endblock content %}
+

@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        {% block css %}
+        {% endblock css %}
+    </head>
+    <body>
+        {% include 'shared/navbar.html' %}
+
+        {% block content %}
+        {% endblock content %}
+
+
+        {% block js %}
+        {% endblock js %}
+    </body>
+</html>

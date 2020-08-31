@@ -1,0 +1,37 @@
+#navbar {
+  list-style-type: none;
+  margin: 20;
+  padding: 20;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.nav_list_item {
+  display: inline;
+  color: white;
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.contact_list_item{
+  color: White;
+  style: Bold;
+}
+
+#profile_pic {
+  float: left;
+}
+
+.contact {
+  margin-left: 215px;
+  background-image: url(gray.jpg);
+  background-repeat: no-repeat;
+
+}
+
+table{
+
+}

@@ -1,0 +1,12 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+    <p>Subject: {{subject.name}}</p>
+    <p>Teacher: {{subject.teacher_name}}</p>
+    <h2>Registered Students</h2>
+    {% for student in subject.students.all %}
+    <p>{{student.first_name}} {{student.last_name}}</p>
+    <p>{{student.email}}</p>
+    {% endfor%}
+{% endblock content %}

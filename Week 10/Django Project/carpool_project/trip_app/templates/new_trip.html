@@ -1,0 +1,10 @@
+{% extends 'trip_app/base.html' %}
+{% block content %}
+    <h1>New Trip</h1>
+    <form method="POST">
+   {{form}}
+   {%csrf_token%}
+    <button  type="submit"  class="btn btn-success">Submit</button>
+
+    </form>
+{% endblock content %}
